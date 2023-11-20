@@ -10,7 +10,7 @@ public class PlayerParserScanner {
 
         String input = keyboard.nextLine();
 
-        Scanner stScanner = new Scanner(input);
+        Scanner strScanner = new Scanner(input);
 
 
     }
