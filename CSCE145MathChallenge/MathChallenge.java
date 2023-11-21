@@ -7,11 +7,11 @@ public class MathChallenge {
     public static void main(String[] args) {
         
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Are you ready for a math challenge?!\n Enter \"true\" or \"false\"");
+        System.out.println("Are you ready for a math challenge?!\n Enter \"yes\" or \"no\"");
 
-        boolean play = keyboard.nextBoolean();
+        String play = keyboard.nextLine();
 
-        if(play) {
+        if(play.equalsIgnoreCase("yes")) {
             System.out.println("Let the challenge begin!");
         }
         else {
