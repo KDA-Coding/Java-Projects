@@ -2,11 +2,15 @@
  * Written by: Kirk Allgeyer
  */
 import java.util.Scanner;
+import java.util.Random;
 public class MathChallenge {
 
+    public static final int RNG_RANGE = 10;
     public static void main(String[] args) {
         
         Scanner keyboard = new Scanner(System.in);
+        Random rand = new Random();
+
         System.out.println("Are you ready for a math challenge?!\n Enter \"yes\" or \"no\"");
 
         String play = keyboard.nextLine();
@@ -20,12 +24,12 @@ public class MathChallenge {
             System.exit(0); //Immediately stops the program
         }
 
-        int num1 = 2;
-        int num2 = 3;
+        int num1 = rand.nextInt(RNG_RANGE);
+        int num2 = rand.nextInt(RNG_RANGE);
 
-        int result = num1 + num2;
+        int result = (int)Math.pow(num1, num2);
 
-        System.out.println("What is "+num1+" plus " +num2+"?");
+        System.out.println("What is "+num1+"^" +num2+"?");
 
         int answer = keyboard.nextInt();
 
