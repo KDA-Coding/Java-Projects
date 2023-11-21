@@ -12,7 +12,16 @@ public class PlayerParserScanner {
 
         Scanner strScanner = new Scanner(input);
 
+        String name = strScanner.next();
+        int iModelID = strScanner.nextInt();
+        double dX = strScanner.nextDouble();
+        double dY = strScanner.nextDouble();
+        double dZ = strScanner.nextDouble();
 
+        System.out.println("The player "+name+" has a model id of "+iModelID+" and is located at\n"+dX+"\t"+dY+"\t"+dZ);
+
+        keyboard.close();
+        strScanner.close();
     }
 
 }

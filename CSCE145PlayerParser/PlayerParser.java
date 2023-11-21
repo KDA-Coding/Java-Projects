@@ -36,5 +36,7 @@ public class PlayerParser {
         double dZ = Double.parseDouble(sZ);
 
         System.out.println("The player "+name+" has a model id of "+iModelID+" and is located at\n"+dX+"\t"+dY+"\t"+dZ);
+
+        keyboard.close();
     }
 }
