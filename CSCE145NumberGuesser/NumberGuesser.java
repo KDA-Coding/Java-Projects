@@ -10,27 +10,33 @@ public class NumberGuesser {
         
         Scanner keyboard = new Scanner(System.in);
         Random rand = new Random();
-        int secretNumber = rand.nextInt(UPPER_NUMBER);
+        boolean playAgain = true;
 
-        System.out.println("I'm thinking of a number from 0 to "+(UPPER_NUMBER-1) +"\nGuess the number!");
+        do {
+            int secretNumber = rand.nextInt(UPPER_NUMBER);
 
-        int guessNumber = 0;
-        boolean correctGuess = false;
+            System.out.println("I'm thinking of a number from 0 to "+(UPPER_NUMBER-1) +"\nGuess the number!");
 
-         while(!correctGuess) {
+            int guessNumber = 0;
+            boolean correctGuess = false;
 
-            guessNumber = keyboard.nextInt();
-            if(guessNumber > secretNumber) {
-                System.out.println("That's too high!");
+            while(!correctGuess) {
+
+                guessNumber = keyboard.nextInt();
+                if(guessNumber > secretNumber) {
+                    System.out.println("That's too high!");
+                }
+                else if(guessNumber < secretNumber) {
+                    System.out.println("That's too low!");
+                }
+                else {
+                    System.out.println("That's correct");
+                    correctGuess = true; 
+                }
             }
-            else if(guessNumber < secretNumber) {
-                System.out.println("That's too low!");
-            }
-            else {
-                System.out.println("That's correct");
-                correctGuess = true; 
-            }
-         }
+            System.out.println("Enter \"true\" to play again!");
+            playAgain = keyboard.nextBoolean();
+        } while(playAgain);
 
          keyboard.close();
     }
