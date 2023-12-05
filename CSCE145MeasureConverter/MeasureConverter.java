@@ -52,7 +52,15 @@ public class MeasureConverter {
             else {
                 result = value;
             }
+
+            printResults(unit1, unit2, value, result);
+
+            System.out.println("Press Enter to keep converting units, or enter \"quit\" to quit");
+            quit = keyboard.nextLine().equalsIgnoreCase("quit");
+
         }
+
+        System.out.println("Goodbye!");
     }
 
     public void printGreetings() {
@@ -63,8 +71,8 @@ public class MeasureConverter {
         System.out.println("Enter the type of units followed by the second type.\nUnits can be either\""+IN+"\", \""+FT+"\", or \""+CM+"\"");
     }
 
-    public void printResults() {
-        
+    public void printResults(String u1, String u2, double value, double result) {
+        System.out.println("There are "+result+" "+u2+" in "+value+" "+u1);
     }
 
     public boolean isValidUnit(String input) {
@@ -100,4 +108,5 @@ public class MeasureConverter {
     public double ftToCm(double ft) {
         return ft * 30.48; 
     }
+
 }   
