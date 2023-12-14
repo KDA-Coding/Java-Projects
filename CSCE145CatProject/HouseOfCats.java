@@ -29,6 +29,10 @@ public class HouseOfCats {
         //Is False; they don't share the same memory address
         System.out.println(cat01 == cat03);
 
+        cat03 = cat02;
+        cat02.setName("Dr.Boots");
+
+        System.out.println(cat03.getName());
     }
 
 }
